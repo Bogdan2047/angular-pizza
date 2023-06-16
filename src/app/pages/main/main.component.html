@@ -1,0 +1,12 @@
+<div>
+  <div class="flex flex-row justify-between pt-[10px]">
+    <app-filter-pizza (filterPizza)="onFilter($event)"></app-filter-pizza>
+    <app-search (searchPizza)="onSearch($event)"></app-search>
+  </div>
+  <div class="flex flex-row flex-wrap justify-start w-full">
+    <app-pizza-item
+      *ngFor="let pizza of filteredPizza"
+      [pizza]="pizza"
+    ></app-pizza-item>
+  </div>
+</div>

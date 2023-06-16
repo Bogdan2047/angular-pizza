@@ -1,0 +1,40 @@
+<div>
+  <div class="flex flex-row w-full pt-[20px] pl-[3%]">
+    <div>
+      <img [src]="pizza.img" alt="pizza.img" class="w-[80px]" />
+    </div>
+    <div class="flex flex-col w-[300px] pl-[5px] md:pt-[3px] 2xl:pt-[15px]">
+      <div>
+        <span class="md:text-base 2xl:text-xl text-semibold">{{
+          pizza.title
+        }}</span>
+      </div>
+      <div class="flex flex-row">
+        <span>{{ pizza.type }}</span
+        >,
+        <span>{{ pizza.size }}</span>
+      </div>
+    </div>
+    <div class="flex flex-row md:w-[50px] 2xl:w-[80px]">
+      <button class="md:pt-[10px] 2xl:pt-[15px] h-[7px]" (click)="handlePlus()">
+        +
+      </button>
+      <span class="w-[40px] md:pt-[10px] 2xl:pt-[15px] pl-[14px] text-xl">{{
+        pizza.count
+      }}</span>
+      <button
+        class="md:pt-[10px] 2xl:pt-[15px] h-[7px]"
+        (click)="handleMinus()"
+      >
+        -
+      </button>
+    </div>
+    <div class="md:pt-[10px] 2xl:pt-[17px] pl-[30px] w-[80px]">
+      <span class="text-xl">{{ pizza.price }}</span>
+    </div>
+    <div class="md:pt-[10px] 2xl:pt-[15px] pl-[80px] text-stone-400">
+      <button (click)="getId()">x</button>
+    </div>
+  </div>
+  <hr class="mt-[10px]" />
+</div>

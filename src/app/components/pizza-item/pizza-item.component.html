@@ -1,0 +1,62 @@
+<div
+  class="flex flex-col items-center py-[20px] mr-[20px] md:w-[200px] 2xl:w-[240px]"
+>
+  <div>
+    <img [src]="pizza.img" [alt]="pizza.title" class="w-[230px] py-[10px]" />
+  </div>
+  <div class="md:text-lg 2xl:text-2xl text-bold pb-[10px]">
+    <span>{{ pizza.title }}</span>
+  </div>
+  <div class="bg-blue-100 w-full rounded-md">
+    <div class="flex justify-between w-[98%] pl-[2%] py-[5px] h-[40px]">
+      <button
+        [class]="typeA ? styleTypeBtnB : styleTypeBtnA"
+        (click)="getType(pizza.type[0])"
+        (click)="changeTypeA()"
+      >
+        {{ pizza.type[0] }}
+      </button>
+      <button
+        [class]="typeB ? styleTypeBtnB : styleTypeBtnA"
+        (click)="getType(pizza.type[1])"
+        (click)="changeTypeB()"
+      >
+        {{ pizza.type[1] }}
+      </button>
+    </div>
+    <div class="flex justify-between w-[98%] pl-[2%] pb-[5px] h-[40px]">
+      <button
+        [class]="sizeA ? styleSizeBtnB : styleSizeBtnA"
+        (click)="getSize(pizza.size[0], pizza.price)"
+        (click)="changeSizeA()"
+      >
+        {{ pizza.size[0] }}
+      </button>
+      <button
+        [class]="sizeB ? styleSizeBtnB : styleSizeBtnA"
+        (click)="getSize(pizza.size[1], pizza.price)"
+        (click)="changeSizeB()"
+      >
+        {{ pizza.size[1] }}
+      </button>
+      <button
+        [class]="sizeC ? styleSizeBtnB : styleSizeBtnA"
+        (click)="getSize(pizza.size[2], pizza.price)"
+        (click)="changeSizeC()"
+      >
+        {{ pizza.size[2] }}
+      </button>
+    </div>
+  </div>
+  <div class="flex justify-between w-full pt-[10px]">
+    <span
+      >from {{ (price ? price : pizza.price) | currency | slice : 0 : 6 }}</span
+    >
+    <button
+      (click)="getData()"
+      class="bg-red-500 text-white w-[80px] h-[30px] rounded-3xl"
+    >
+      + Add {{ quantity }}
+    </button>
+  </div>
+</div>

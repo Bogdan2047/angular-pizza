@@ -1,0 +1,47 @@
+<div
+  *ngIf="pizzaData.length === 0"
+  class="flex flex-col justify-center items-center text-center md:pt-[60px] pt-[140px]"
+>
+  <span class="text-3xl">Backet empty 😕</span>
+  <span class="w-[350px] py-[20px] text-stone-400"
+    >You probably haven't ordered pizza yet. To order pizza, go to the main
+    page.</span
+  >
+  <img src="../../../assets/layer.png" alt="" class="w-[350px] my-[10px]" />
+  <a routerLink="/">
+    <button
+      class="bg-black text-white w-[200px] h-[30px] rounded-2xl md:mt-[20px] mt-[40px]"
+    >
+      Go back
+    </button>
+  </a>
+</div>
+
+<div *ngIf="pizzaData.length !== 0" class="pt-[100px] w-[80%] pl-[20%]">
+  <div class="flex flex-row justify-between">
+    <div class="flex flex-row">
+      <img src="../../../assets/shop.png" alt="" />
+      <span class="text-xl pl-[5px] text-semibold pt-[5px]">Backet</span>
+    </div>
+    <div>
+      <button class="text-xl text-stone-400" (click)="handleDelete()">
+        Clear backet
+      </button>
+    </div>
+  </div>
+  <hr class="mt-[10px]" />
+  <div>
+    <app-backet-item
+      *ngFor="let pizza of pizzaData"
+      [pizza]="pizza"
+    ></app-backet-item>
+  </div>
+
+  <hr class="mt-[10px]" />
+  <div class="flex flex-row justify-between pt-[10px]">
+    <span class="text-xl">All count: {{ countAll }}</span>
+    <span class="text-xl"
+      >Summ order: {{ priceAll | currency | slice : 0 : 6 }}</span
+    >
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="flex justify-between w-[500px]">
+  <button
+    [class]="btnAll ? btnBlack : btnGrey"
+    (click)="handleFilter('')"
+    (click)="changeBtnAll()"
+  >
+    All
+  </button>
+  <button
+    [class]="btnPepper ? btnBlack : btnGrey"
+    (click)="handleFilter('pepper')"
+    (click)="changeBtnPepper()"
+  >
+    Pepper
+  </button>
+  <button
+    [class]="btnChiken ? btnBlack : btnGrey"
+    (click)="handleFilter('chiken')"
+    (click)="changeBtnChiken()"
+  >
+    Chiken
+  </button>
+  <button
+    [class]="btnMushroom ? btnBlack : btnGrey"
+    (click)="handleFilter('mushroom')"
+    (click)="changeBtnMushroom()"
+  >
+    Mushroom
+  </button>
+  <button
+    [class]="btnCheese ? btnBlack : btnGrey"
+    (click)="handleFilter('cheese')"
+    (click)="changeBtnCheese()"
+  >
+    Cheese
+  </button>
+</div>
